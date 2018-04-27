@@ -1,1 +1,4 @@
-npm install --save less.js
+```bash
+# install
+$ npm install --save less.js
+```
