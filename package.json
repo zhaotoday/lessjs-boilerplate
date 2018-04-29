@@ -1,0 +1,51 @@
+{
+  "name": "less.js",
+  "version": "0.0.2",
+  "description": "a koa mvc framework",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js --debug",
+    "start": "pm2 start processes.json --env production",
+    "stop": "pm2 stop app1",
+    "eslintfix": "eslint src/**/*.js --fix",
+    "eslint": "eslint src/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhaotoday/less.js.git"
+  },
+  "keywords": [
+    "koa",
+    "mvc"
+  ],
+  "author": "zhaojintian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhaotoday/less.js/issues"
+  },
+  "homepage": "https://github.com/zhaotoday/less.js#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "nodemon": "^1.17.3"
+  },
+  "dependencies": {
+    "@koa/cors": "^2.2.1",
+    "bcryptjs": "^2.4.3",
+    "class-autobind": "^0.1.4",
+    "jsonwebtoken": "^8.2.1",
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-ejs": "^4.1.1",
+    "koa-jwt": "^3.3.1",
+    "koa-router": "^7.4.0",
+    "koa-static": "^4.0.2",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.3",
+    "sequelize": "^4.37.5"
+  }
+}

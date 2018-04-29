@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  const headers = {
+    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJuYW1lIjoiemhhbyJ9LCJpYXQiOjE1MjM3MDQ1NTgsImV4cCI6MTUyMzcyMjU1OH0.nk8KwYOgqrOs4mFUXd2OMTeGk8m_zAWcnUSz1akKykU'
+  }
+
+  $.ajax({
+    url: 'https://admin.liruan.cn/apis/v1/articles/2',
+    type: 'GET',
+    headers
+  })
+
+  $.ajax({
+    url: 'https://admin.liruan.cn/apis/v1/actions/login',
+    type: 'POST'
+  })
+
+  $.ajax({
+    url: 'https://admin.liruan.cn/apis/v1/managers/1',
+    type: 'PUT',
+    headers,
+    data: {
+      password: '$2a$10$Z5fzQY/U3JaIGgE.Zvfwoe2FeKqfne1MdnL/eHw7booRcnhv71/vy'
+    }
+  })
+</script>
+</body>
+</html>
