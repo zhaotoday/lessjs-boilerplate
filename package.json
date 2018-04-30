@@ -1,7 +1,7 @@
 {
-  "name": "less.js",
+  "name": "lessjs-boilerplate",
   "version": "0.0.2",
-  "description": "a koa mvc framework",
+  "description": "A boilerplate for less.js.",
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon src/index.js --debug",
@@ -34,18 +34,7 @@
     "nodemon": "^1.17.3"
   },
   "dependencies": {
-    "@koa/cors": "^2.2.1",
     "bcryptjs": "^2.4.3",
-    "class-autobind": "^0.1.4",
-    "jsonwebtoken": "^8.2.1",
-    "koa": "^2.5.0",
-    "koa-bodyparser": "^4.2.0",
-    "koa-ejs": "^4.1.1",
-    "koa-jwt": "^3.3.1",
-    "koa-router": "^7.4.0",
-    "koa-static": "^4.0.2",
-    "mysql": "^2.15.0",
-    "mysql2": "^1.5.3",
-    "sequelize": "^4.37.5"
+    "less.js": "0.0.11"
   }
 }
