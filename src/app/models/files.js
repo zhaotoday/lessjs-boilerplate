@@ -1,9 +1,17 @@
 module.exports = app => {
-  const {STRING, TEXT, INTEGER, FLOAT} = app.$Sequelize
+  const {STRING, INTEGER} = app.$Sequelize
 
   return app.$model.define('files', {
-    id: ID,
-    title: TITLE,
+    id: {
+      type: INTEGER(10).UNSIGNED,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false
+    },
+    title: {
+      type: STRING(200),
+      allowNull: false
+    },
     type: {
       type: STRING(50),
       allowNull: false
@@ -16,6 +24,9 @@ module.exports = app => {
       type: STRING(10),
       allowNull: false
     },
-    module: MODULE
+    module: {
+      type: STRING(50),
+      allowNull: true
+    }
   })
 }

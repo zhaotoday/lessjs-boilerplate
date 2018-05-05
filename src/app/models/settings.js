@@ -1,5 +1,5 @@
 module.exports = app => {
-  const {STRING, TEXT, INTEGER, FLOAT} = app.$Sequelize
+  const {STRING, TEXT, INTEGER} = app.$Sequelize
 
   return app.$model.define('settings', {
     id: {
@@ -8,16 +8,37 @@ module.exports = app => {
       autoIncrement: true,
       allowNull: false
     },
-    title: TITLE,
+    title: {
+      type: STRING(200),
+      allowNull: false
+    },
     keywords: {
       type: STRING(200),
       allowNull: true
     },
-    description: DESCRIPTION,
-    telephone: TELEPHONE,
-    cellphone: CELLPHONE,
-    email: EMAIL,
-    address: ADDRESS,
-    postcode: POSTCODE
+    description: {
+      type: TEXT('tiny'),
+      allowNull: true
+    },
+    telephone: {
+      type: STRING(50),
+      allowNull: true
+    },
+    cellphone: {
+      type: STRING(50),
+      allowNull: true
+    },
+    email: {
+      type: STRING(100),
+      allowNull: true
+    },
+    address: {
+      type: STRING(200),
+      allowNull: true
+    },
+    postcode: {
+      type: STRING(50),
+      allowNull: true
+    }
   })
 }

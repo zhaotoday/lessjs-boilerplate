@@ -1,12 +1,32 @@
 module.exports = app => {
-  const {STRING, TEXT, INTEGER, FLOAT} = app.$Sequelize
+  const {STRING, TEXT, INTEGER} = app.$Sequelize
 
   return app.$model.define('categories', {
-    id: SHORT_ID,
-    parent_id: SHORT_RELATED_ID,
-    title: TITLE,
-    description: DESCRIPTION,
-    order: SHORT_ORDER,
-    module: MODULE
+    id: {
+      type: INTEGER(6).UNSIGNED,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false
+    },
+    parent_id: {
+      type: INTEGER(6).UNSIGNED,
+      allowNull: true
+    },
+    title: {
+      type: STRING(200),
+      allowNull: false
+    },
+    description: {
+      type: TEXT('tiny'),
+      allowNull: true
+    },
+    order: {
+      type: INTEGER(6).UNSIGNED,
+      allowNull: true
+    },
+    module: {
+      type: STRING(50),
+      allowNull: true
+    }
   })
 }
