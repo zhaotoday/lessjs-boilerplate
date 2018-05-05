@@ -1,6 +1,5 @@
 module.exports = app => {
-  const {STRING} = app.$Sequelize
-  const {ID, TITLE, MODULE} = app.$model.columns
+  const {STRING, TEXT, INTEGER, FLOAT} = app.$Sequelize
 
   return app.$model.define('files', {
     id: ID,

@@ -1,5 +1,5 @@
 module.exports = app => {
-  const {SHORT_ID, SHORT_RELATED_ID, TITLE, DESCRIPTION, SHORT_ORDER, MODULE} = app.$model.columns
+  const {STRING, TEXT, INTEGER, FLOAT} = app.$Sequelize
 
   return app.$model.define('categories', {
     id: SHORT_ID,
