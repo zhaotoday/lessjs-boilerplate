@@ -24,6 +24,14 @@ module.exports = app => {
       allowNull: false,
       comment: '尺寸'
     },
+    dir: {
+      type: STRING(10),
+      comment: '目录'
+    },
+    uuid: {
+      type: STRING(36),
+      comment: '唯一 ID'
+    },
     ext: {
       type: STRING(10),
       allowNull: false,

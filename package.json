@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "less.js": "0.0.12"
+    "dayjs": "^1.5.19",
+    "less.js": "0.0.15"
   }
 }

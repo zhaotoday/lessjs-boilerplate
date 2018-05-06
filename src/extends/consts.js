@@ -1,5 +1,5 @@
 // 监听端口
-const PORT = 3001
+const PORT = 3002
 
 // MySQL 数据库配置
 const DB = {
@@ -22,7 +22,13 @@ const REDIS = {}
 // JWT 配置
 const JWT = {
   secret: 'jwt_secret',
-  expiresIn: '5h'
+  expiresIn: '5h',
+  unlessPath: [
+    /^\/$/,
+    /^\/articles/,
+    /\/login/,
+    /\/files\/\d/
+  ]
 }
 
 module.exports = app => {
