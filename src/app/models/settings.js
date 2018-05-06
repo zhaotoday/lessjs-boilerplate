@@ -6,32 +6,41 @@ module.exports = app => {
       type: INTEGER(3),
       primaryKey: true,
       autoIncrement: true,
-      allowNull: false
+      allowNull: false,
+      comment: 'ID'
     },
     title: {
       type: STRING(200),
-      allowNull: false
+      allowNull: false,
+      comment: '标题'
     },
     keywords: {
-      type: STRING(200)
+      type: STRING(200),
+      comment: '关键词'
     },
     description: {
-      type: TEXT('tiny')
+      type: TEXT('tiny'),
+      comment: '描述'
     },
     telephone: {
-      type: STRING(50)
+      type: STRING(50),
+      comment: '手机号'
     },
     cellphone: {
-      type: STRING(50)
+      type: STRING(50),
+      comment: '固定电话'
     },
     email: {
-      type: STRING(100)
+      type: STRING(100),
+      comment: '邮箱'
     },
     address: {
-      type: STRING(200)
+      type: STRING(200),
+      comment: '地址'
     },
     postcode: {
-      type: STRING(50)
+      type: STRING(50),
+      comment: '邮编'
     }
   })
 }

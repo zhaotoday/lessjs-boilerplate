@@ -6,26 +6,32 @@ module.exports = app => {
       type: INTEGER(10).UNSIGNED,
       primaryKey: true,
       autoIncrement: true,
-      allowNull: false
+      allowNull: false,
+      comment: 'ID'
     },
     title: {
       type: STRING(200),
-      allowNull: false
+      allowNull: false,
+      comment: '标题'
     },
     type: {
       type: STRING(50),
-      allowNull: false
+      allowNull: false,
+      comment: '类型'
     },
     size: {
       type: STRING(50),
-      allowNull: false
+      allowNull: false,
+      comment: '尺寸'
     },
     ext: {
       type: STRING(10),
-      allowNull: false
+      allowNull: false,
+      comment: '后缀'
     },
     module: {
-      type: STRING(50)
+      type: STRING(50),
+      comment: '模块'
     }
   })
 }

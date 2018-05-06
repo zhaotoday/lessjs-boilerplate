@@ -6,23 +6,29 @@ module.exports = app => {
       type: INTEGER(6).UNSIGNED,
       primaryKey: true,
       autoIncrement: true,
-      allowNull: false
+      allowNull: false,
+      comment: 'ID'
     },
     parent_id: {
-      type: INTEGER(6).UNSIGNED
+      type: INTEGER(6).UNSIGNED,
+      comment: '上级 ID'
     },
     title: {
       type: STRING(200),
-      allowNull: false
+      allowNull: false,
+      comment: '标题'
     },
     description: {
-      type: TEXT('tiny')
+      type: TEXT('tiny'),
+      comment: '描述'
     },
     order: {
-      type: INTEGER(6).UNSIGNED
+      type: INTEGER(6).UNSIGNED,
+      comment: '次序'
     },
     module: {
-      type: STRING(50)
+      type: STRING(50),
+      comment: '模块'
     }
   })
 }
