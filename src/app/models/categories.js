@@ -9,24 +9,20 @@ module.exports = app => {
       allowNull: false
     },
     parent_id: {
-      type: INTEGER(6).UNSIGNED,
-      allowNull: true
+      type: INTEGER(6).UNSIGNED
     },
     title: {
       type: STRING(200),
       allowNull: false
     },
     description: {
-      type: TEXT('tiny'),
-      allowNull: true
+      type: TEXT('tiny')
     },
     order: {
-      type: INTEGER(6).UNSIGNED,
-      allowNull: true
+      type: INTEGER(6).UNSIGNED
     },
     module: {
-      type: STRING(50),
-      allowNull: true
+      type: STRING(50)
     }
   })
 }

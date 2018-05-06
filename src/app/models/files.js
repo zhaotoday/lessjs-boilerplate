@@ -25,8 +25,7 @@ module.exports = app => {
       allowNull: false
     },
     module: {
-      type: STRING(50),
-      allowNull: true
+      type: STRING(50)
     }
   })
 }

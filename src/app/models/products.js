@@ -9,36 +9,29 @@ module.exports = app => {
       allowNull: false
     },
     category_id: {
-      type: INTEGER(6).UNSIGNED,
-      allowNull: true
+      type: INTEGER(6).UNSIGNED
     },
     title: {
       type: STRING(200),
       allowNull: false
     },
     price: {
-      type: FLOAT(10),
-      allowNull: true
+      type: FLOAT(10)
     },
     description: {
-      type: TEXT('tiny'),
-      allowNull: true
+      type: TEXT('tiny')
     },
     content: {
-      type: TEXT('long'),
-      allowNull: true
+      type: TEXT('long')
     },
     stock: {
-      type: INTEGER(8),
-      allowNull: true
+      type: INTEGER(8)
     },
     unit: {
-      type: STRING(50),
-      allowNull: true
+      type: STRING(50)
     },
     pictures: {
-      type: STRING(200),
-      allowNull: true
+      type: STRING(200)
     }
   })
 }

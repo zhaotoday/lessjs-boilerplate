@@ -17,13 +17,11 @@ module.exports = app => {
       allowNull: false
     },
     rank: {
-      type: INTEGER(4).UNSIGNED,
-      allowNull: true
+      type: INTEGER(4).UNSIGNED
     },
     status: {
       type: INTEGER(1),
-      isIn: [[0, 1]],
-      allowNull: true
+      isIn: [[0, 1]]
     }
   })
 }

@@ -13,32 +13,25 @@ module.exports = app => {
       allowNull: false
     },
     keywords: {
-      type: STRING(200),
-      allowNull: true
+      type: STRING(200)
     },
     description: {
-      type: TEXT('tiny'),
-      allowNull: true
+      type: TEXT('tiny')
     },
     telephone: {
-      type: STRING(50),
-      allowNull: true
+      type: STRING(50)
     },
     cellphone: {
-      type: STRING(50),
-      allowNull: true
+      type: STRING(50)
     },
     email: {
-      type: STRING(100),
-      allowNull: true
+      type: STRING(100)
     },
     address: {
-      type: STRING(200),
-      allowNull: true
+      type: STRING(200)
     },
     postcode: {
-      type: STRING(50),
-      allowNull: true
+      type: STRING(50)
     }
   })
 }
