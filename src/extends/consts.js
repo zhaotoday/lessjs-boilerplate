@@ -25,7 +25,7 @@ const JWT = {
   expiresIn: '5h',
   unlessPath: [
     /^\/$/,
-    /^\/articles/,
+    /\/articles/,
     /\/login/,
     /\/files\/\d/
   ]
