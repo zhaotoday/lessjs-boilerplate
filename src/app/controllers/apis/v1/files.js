@@ -11,9 +11,9 @@ module.exports = app => {
      * @returns {Promise}
      */
     async post (ctx) {
+      const {name, path, type, size} = ctx.request.body.files.file
       const uuid = app.$module('utils/uuid')(app)
       const date = dayjs().format('YYYY-MM-DD')
-      const {name, path, type, size} = ctx.request.body.files.file
       const reader = fs.createReadStream(path)
       const ext = name.split('.').pop()
       const saveDir = `${app.$consts.DIRS.PUBLIC}/files/${date}`

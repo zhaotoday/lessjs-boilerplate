@@ -12,18 +12,22 @@
   }
 
   $.ajax({
-    url: 'https://admin.liruan.cn/apis/v1/articles/2',
+    url: 'http://localhost:3002/apis/v1/articles',
     type: 'GET',
     headers
   })
 
   $.ajax({
-    url: 'https://admin.liruan.cn/apis/v1/actions/login',
-    type: 'POST'
+    url: 'http://localhost:3002/apis/v1/actions/login',
+    type: 'POST',
+    data: {
+      username: 'admin',
+      password: '1234561'
+    }
   })
 
   $.ajax({
-    url: 'https://admin.liruan.cn/apis/v1/managers/1',
+    url: 'http://localhost:3002/apis/v1/managers/1',
     type: 'PUT',
     headers,
     data: {
