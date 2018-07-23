@@ -1,5 +1,5 @@
 module.exports = app => {
-  const {STRING, INTEGER} = app.$Sequelize
+  const { STRING, INTEGER } = app.$Sequelize
 
   return app.$model.define('managers', {
     id: {

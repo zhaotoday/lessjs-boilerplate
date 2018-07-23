@@ -4,7 +4,7 @@ module.exports = app => {
   return class extends app.$Controller {
     async index (ctx, next) {
       await ctx.render('articles', {
-        items: await service.find({offset: 0, limit: 10})
+        items: await service.find({ offset: 0, limit: 10 })
       })
     }
   }

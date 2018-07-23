@@ -11,7 +11,7 @@ module.exports = app => {
      * @returns {Promise}
      */
     async post (ctx) {
-      const {name, path, type, size} = ctx.request.body.files.file
+      const { name, path, type, size } = ctx.request.body.files.file
       const uuid = app.$module('utils/uuid')(app)
       const date = dayjs().format('YYYY-MM-DD')
       const reader = fs.createReadStream(path)
@@ -29,7 +29,7 @@ module.exports = app => {
       ctx.send({
         status: 201,
         data: await service.create({
-          body: {title: name, type, ext, size, uuid, dir: date}
+          body: { title: name, type, ext, size, uuid, dir: date }
         })
       })
     }
@@ -40,7 +40,7 @@ module.exports = app => {
      * @returns {Promise}
      */
     async get (ctx) {
-      const item = await service.find({id: ctx.params.id})
+      const item = await service.find({ id: ctx.params.id })
 
       ctx.response.redirect(`http://localhost:3002/files/${item.dir}/${item.uuid}.${item.ext}`)
     }

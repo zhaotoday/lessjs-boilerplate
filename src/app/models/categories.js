@@ -1,5 +1,5 @@
 module.exports = app => {
-  const {STRING, TEXT, INTEGER} = app.$Sequelize
+  const { STRING, TEXT, INTEGER } = app.$Sequelize
 
   return app.$model.define('categories', {
     id: {

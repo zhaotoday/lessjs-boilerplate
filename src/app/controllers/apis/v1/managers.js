@@ -10,7 +10,7 @@ module.exports = app => {
     }
 
     post (ctx) {
-      const {password} = ctx.request.body
+      const { password } = ctx.request.body
       const passwordHash = (() => {
         // 生成 salt 的迭代次数
         const SALT_ROUNDS = 10
@@ -20,7 +20,7 @@ module.exports = app => {
         return bcrypt.hashSync(password, salt)
       })()
 
-      ctx.send({data: passwordHash})
+      ctx.send({ data: passwordHash })
     }
   }
 }

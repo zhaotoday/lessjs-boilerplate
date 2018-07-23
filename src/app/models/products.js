@@ -1,5 +1,5 @@
 module.exports = app => {
-  const {STRING, TEXT, INTEGER, FLOAT} = app.$Sequelize
+  const { STRING, TEXT, INTEGER, FLOAT } = app.$Sequelize
 
   return app.$model.define('products', {
     id: {

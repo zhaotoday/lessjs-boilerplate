@@ -9,17 +9,17 @@ module.exports = app => {
      * @returns {Promise}
      */
     async post (ctx) {
-      const {username, password} = ctx.request.body
+      const { username, password } = ctx.request.body
       const res = await service.find({
         attributes: ['id', 'username', 'password'],
-        where: {username}
+        where: { username }
       })
 
       if (res.length && bcrypt.compareSync(password, res[0].password)) {
-        const manager = {id: res[0].id, username}
+        const manager = { id: res[0].id, username }
 
         ctx.send({
-          data: {manager, token: this.sign(manager)}
+          data: { manager, token: this.sign(manager) }
         })
       } else {
         ctx.send({
