@@ -34,6 +34,14 @@ module.exports = app => {
       type: STRING(100),
       comment: '邮箱'
     },
+    copyright: {
+      type: STRING(200),
+      comment: '版权'
+    },
+    icp: {
+      type: STRING(200),
+      comment: '备案号'
+    },
     address: {
       type: STRING(200),
       comment: '地址'
@@ -41,6 +49,14 @@ module.exports = app => {
     postcode: {
       type: STRING(50),
       comment: '邮编'
+    },
+    oa_qrcode: {
+      type: INTEGER(10).UNSIGNED,
+      comment: '公众号二维码'
+    },
+    app_qrcode: {
+      type: INTEGER(10).UNSIGNED,
+      comment: 'App 二维码'
     }
   })
 }

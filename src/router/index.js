@@ -4,6 +4,7 @@ module.exports = app => {
   require('./routes/articles')(app, router)
   require('./routes/apis/v1/articles')(app, router)
   require('./routes/apis/v1/categories')(app, router)
+  require('./routes/apis/v1/settings')(app, router)
   require('./routes/apis/v1/managers')(app, router)
   require('./routes/apis/v1/files')(app, router)
   require('./routes/apis/v1/actions/login')(app, router)
