@@ -34,8 +34,8 @@ module.exports = app => {
       type: TEXT('long'),
       comment: '内容'
     },
-    pictures: {
-      type: STRING(200),
+    picture: {
+      type: INTEGER(10).UNSIGNED,
       comment: '图片'
     },
     order: {
