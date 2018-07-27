@@ -5,12 +5,10 @@ module.exports = (app, Controller) => {
     }
 
     async getGlobalData () {
+      const time = require('less.js/src/utils/time')
+
       return {
-        helpers: {
-          formatTime () {
-            return 2222
-          }
-        },
+        utils: { time },
         consts: {
           PAGE_SIZE: app.$consts.PAGE_SIZE,
           CDN: process.env.NODE_ENV === 'development' ? `http://localhost:${app.$consts.PORT}` : 'https://cdn.liruan.cn'

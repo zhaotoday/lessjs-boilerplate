@@ -13,8 +13,7 @@ module.exports = app => {
           }),
           categoryTops: await app.$services.articles.find({
             where: { is_category_top: 1 }
-          }),
-          items: await app.$services.articles.find({ offset: 0, limit: 10 })
+          })
         }
       }
 
