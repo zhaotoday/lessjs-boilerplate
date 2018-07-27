@@ -5,7 +5,7 @@
   </div>
   <div class="c-news-panel__body">
     <% $.categoryTops.forEach(function (item) { %>
-    <%- require('./commons/components/news-card.ejs')({ $: $, item: item }) %>
+    <%- include('./commons/components/news-card.ejs', { $: $, item: item }) %>
     <% }) %>
   </div>
 </div>
