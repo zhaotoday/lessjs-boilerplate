@@ -41,6 +41,16 @@ module.exports = app => {
     order: {
       type: INTEGER(10).UNSIGNED,
       comment: '次序'
+    },
+    is_home_ad: {
+      type: INTEGER(1).UNSIGNED,
+      defaultValue: 0,
+      comment: '是否首页广告'
+    },
+    is_category_top: {
+      type: INTEGER(1).UNSIGNED,
+      defaultValue: 0,
+      comment: '是否分类头条'
     }
   })
 }

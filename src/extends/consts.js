@@ -1,6 +1,9 @@
 // 监听端口
 const PORT = 3002
 
+// 分页大小
+const PAGE_SIZE = 3
+
 // MySQL 数据库配置
 const DB = {
   database: 'hzzww0n',
@@ -25,6 +28,7 @@ const JWT = {
   expiresIn: '5h',
   unlessPath: [
     /^\/$/,
+    /\/news/,
     /\/articles/,
     /\/login/,
     /\/files\/\d/
@@ -34,6 +38,7 @@ const JWT = {
 module.exports = app => {
   return {
     PORT,
+    PAGE_SIZE,
     DB,
     REDIS,
     JWT

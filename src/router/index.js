@@ -1,7 +1,10 @@
 const router = require('koa-router')()
 
 module.exports = app => {
+  require('./routes/home')(app, router)
+  require('./routes/news')(app, router)
   require('./routes/articles')(app, router)
+
   require('./routes/apis/v1/articles')(app, router)
   require('./routes/apis/v1/categories')(app, router)
   require('./routes/apis/v1/settings')(app, router)

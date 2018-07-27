@@ -1,6 +1,4 @@
 module.exports = app => {
-  const service = app.$services.articles
-
   return class extends app.$Controller {
     async index (ctx) {
       const { title, keywords, description } = await this.getSettings()
@@ -10,11 +8,17 @@ module.exports = app => {
         $: {
           ...globalData,
           head: { title, keywords, description },
-          items: await service.find({ offset: 0, limit: 10 })
+          homeAds: await app.$services.articles.find({
+            where: { is_home_ad: 1 }
+          }),
+          categoryTops: await app.$services.articles.find({
+            where: { is_category_top: 1 }
+          }),
+          items: await app.$services.articles.find({ offset: 0, limit: 10 })
         }
       }
 
-      await ctx.render('articles', data)
+      await ctx.render('home', data)
     }
   }
 }
