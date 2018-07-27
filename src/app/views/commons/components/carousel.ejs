@@ -1,0 +1,17 @@
+<div class="c-carousel container">
+  <ul class="c-carousel__images" id="carousel-images">
+    <% $.homeAds.forEach(function (item, index) { %>
+    <div class="c-carousel__images-item image-<%= index %>">
+      <img src="<%= $.helpers.getFileURL(item.picture) %>">
+      <div class="overlay"></div>
+    </div>
+    <% }) %>
+  </ul>
+  <ul class="c-carousel__nav" id="carousel-nav">
+    <% $.homeAds.forEach(function (item, index) { %>
+    <li class="c-carousel__nav-item<% index === 1 ? ' is-active' : '' %>"></li>
+    <% }) %>
+  </ul>
+  <div class="c-carousel__prev" id="carousel-prev"></div>
+  <div class="c-carousel__next" id="carousel-next"></div>
+</div>
