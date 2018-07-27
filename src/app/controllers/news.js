@@ -3,17 +3,18 @@ module.exports = app => {
     async index (ctx) {
       const { title, keywords, description } = await this.getSettings()
       const globalData = await this.getGlobalData()
+      // TODO: limit = -1 表示无需分页
+      const categories = await app.$services.categories.find({ offset: 0, limit: 1000 })
       const id = ctx.params.id || ''
-
-      let data
 
       if (id) {
         const details = await app.$services.articles.find({ id })
 
-        data = {
+        await ctx.render('news-details', {
           $: {
             ...globalData,
             head: { title, keywords, description },
+            categories,
             details,
             prev: (await app.$services.articles.find({
               limit: 1,
@@ -29,27 +30,25 @@ module.exports = app => {
               order: [['id', 'ASC']]
             }))[0] || null
           }
-        }
+        })
       } else {
         const { PAGE_SIZE } = app.$consts
         const categoryId = ctx.query.c || 0
-        const page = ctx.query.p || 1
+        const page = +ctx.query.p || 1
         const where = categoryId ? { category_id: categoryId } : null
 
-        data = {
+        await ctx.render('news', {
           $: {
             ...globalData,
             head: { title, keywords, description },
+            categories,
             category: categoryId ? await app.$services.categories.find({ id: categoryId }) : null,
-            // TODO: limit = -1 表示无需分页
-            categories: await app.$services.categories.find({ offset: 0, limit: 1000 }),
             count: await app.$services.articles.count({ where }),
-            items: await app.$services.articles.find({ where, offset: (page - 1) * PAGE_SIZE, limit: PAGE_SIZE })
+            items: await app.$services.articles.find({ where, offset: (page - 1) * PAGE_SIZE, limit: PAGE_SIZE }),
+            page
           }
-        }
+        })
       }
-
-      await ctx.render('home', data)
     }
   }
 }

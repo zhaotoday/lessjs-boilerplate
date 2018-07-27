@@ -1,5 +1,7 @@
 module.exports = app => {
   return {
-    test () {}
+    getFileURL (id) {
+      return `${app.$consts.BASE_URL}/apis/v1/files/${id}`
+    }
   }
 }
