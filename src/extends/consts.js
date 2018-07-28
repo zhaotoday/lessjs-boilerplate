@@ -5,7 +5,7 @@ const IS_DEV = process.env.NODE_ENV !== 'development'
 const PORT = 3002
 
 // 基础地址
-const BASE_URL = IS_DEV ? `http://localhost:${PORT}` : 'https://yly-cdn.liruan.cn'
+const BASE_URL = IS_DEV ? `http://localhost:${PORT}` : 'https://www.rjwb.cn'
 
 // 前端资源 CDN。开发环境下配置成网站构建工具 dev 时的地址
 const CDN = IS_DEV ? `http://localhost:8083` : 'https://yly-cdn.liruan.cn'
