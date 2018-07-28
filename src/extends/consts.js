@@ -1,5 +1,5 @@
 // 是否开发环境
-const IS_DEV = process.env.NODE_ENV !== 'development'
+const IS_DEV = process.env.NODE_ENV === 'development'
 
 // 监听端口
 const PORT = 3002
