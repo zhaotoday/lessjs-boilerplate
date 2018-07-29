@@ -4,7 +4,7 @@ module.exports = app => {
       const { title, keywords, description } = await this.getSettings()
       const globalData = await this.getGlobalData(ctx)
 
-      await ctx.render((ctx.isPhone ? 'mobile/' : '') + 'home', {
+      await ctx.render((ctx.isMobile ? 'mobile/' : '') + 'home', {
         $: {
           ...globalData,
           head: { title, keywords, description },
