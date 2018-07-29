@@ -38,6 +38,7 @@ const JWT = {
   unlessPath: [
     /^\/$/,
     /^\/news/,
+    /^\/categories/,
     /\/views/,
     /\/login/,
     /\/files\/\d/
