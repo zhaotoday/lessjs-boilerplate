@@ -1,13 +1,22 @@
 module.exports = app => {
   app.use(async (ctx, next) => {
-    const req = ctx.request
+    const { url } = ctx.request
 
     if (ctx.isPhone) {
-      console.log(req)
-      await next()
-      // ctx.response.redirect('https://www.baidu.com/')
+      if (url.indexOf('/m/') === -1 && url !== '/m') {
+        ctx.response.redirect(`/m${url}`)
+      } else {
+        await next()
+      }
     } else {
-      await next()
+      console.log(url)
+      if (url.indexOf('/m/') !== -1) {
+        ctx.response.redirect(url.replace('m/', ''))
+      } else if (url === '/m') {
+        ctx.response.redirect(url.replace('m', ''))
+      } else {
+        await next()
+      }
     }
   })
 }
