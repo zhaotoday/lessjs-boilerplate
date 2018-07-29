@@ -1,6 +1,5 @@
 <%
 const view = 'news'
-const $ = require('../mock/$')(view)
 %>
 <%- include ./commons/snippets/head.ejs %>
 <div class="c-status-bar bg1 mb">
@@ -11,7 +10,7 @@ const $ = require('../mock/$')(view)
   <div class="c-news-panel bg1 mb">
     <div class="c-news-panel__body m-padding-top-30">
       <% $.items.forEach(function (item) { %>
-      <%- require('./commons/components/news-card.ejs')({ $: $, item: item }) %>
+      <%- include('./commons/components/news-card.ejs', { $: $, item: item }) %>
       <% }) %>
     </div>
   </div>

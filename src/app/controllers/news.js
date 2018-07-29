@@ -2,7 +2,7 @@ module.exports = app => {
   return class extends app.$Controller {
     async index (ctx) {
       const { title, keywords, description } = await this.getSettings()
-      const globalData = await this.getGlobalData()
+      const globalData = await this.getGlobalData(ctx)
       // TODO: limit = -1 表示无需分页
       const categories = await app.$services.categories.find({ offset: 0, limit: 1000 })
       const id = ctx.params.id || ''

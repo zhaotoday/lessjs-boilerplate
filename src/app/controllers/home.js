@@ -2,7 +2,7 @@ module.exports = app => {
   return class extends app.$Controller {
     async index (ctx) {
       const { title, keywords, description } = await this.getSettings()
-      const globalData = await this.getGlobalData()
+      const globalData = await this.getGlobalData(ctx)
 
       await ctx.render((ctx.isPhone ? 'mobile/' : '') + 'home', {
         $: {
