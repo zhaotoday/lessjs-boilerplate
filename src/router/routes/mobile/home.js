@@ -1,3 +1,3 @@
 module.exports = (app, router) => {
-  router.get('/', app.$controllers.home.index)
+  router.get('/m', app.$controllers.home.index)
 }

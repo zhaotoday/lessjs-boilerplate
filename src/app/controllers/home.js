@@ -4,7 +4,7 @@ module.exports = app => {
       const { title, keywords, description } = await this.getSettings()
       const globalData = await this.getGlobalData()
 
-      const data = {
+      await ctx.render('home', {
         $: {
           ...globalData,
           head: { title, keywords, description },
@@ -15,9 +15,7 @@ module.exports = app => {
             where: { is_category_top: 1 }
           })
         }
-      }
-
-      await ctx.render('home', data)
+      })
     }
   }
 }
