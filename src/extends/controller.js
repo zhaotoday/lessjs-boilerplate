@@ -5,14 +5,14 @@ module.exports = (app, Controller) => {
     }
 
     async getGlobalData (ctx) {
-      const { BASE_URL, CDN, PAGE_SIZE } = app.$consts
+      const { BASE_URL, CDN, PAGE_SIZE, STATIC_VERSION } = app.$consts
       const time = require('less.js/src/utils/time')
       const cut = require('less.js/src/utils/cut')
 
       return {
         helpers: app.$helpers,
         utils: { time, cut },
-        consts: { BASE_URL, CDN: CDN + (ctx.isMobile ? '/m' : ''), PAGE_SIZE },
+        consts: { BASE_URL, CDN: CDN + (ctx.isMobile ? '/m' : ''), PAGE_SIZE, STATIC_VERSION },
         settings: await this.getSettings()
       }
     }
