@@ -8,7 +8,7 @@ const PORT = 3002
 const BASE_URL = IS_DEV ? `http://localhost:${PORT}` : 'https://www.rjwb.cn'
 
 // 前端资源 CDN。开发环境下配置成网站构建工具 dev 时的地址
-const CDN = IS_DEV ? `http://localhost:8083` : 'https://yly-cdn.liruan.cn'
+const CDN = IS_DEV ? `http://localhost:8083` : 'https://www.rjwb.cn'
 
 // 分页大小
 const PAGE_SIZE = 5
@@ -37,6 +37,7 @@ const JWT = {
   expiresIn: '5h',
   unlessPath: [
     /^\/$/,
+    /^\/m/,
     /^\/news/,
     /^\/categories/,
     /\/views/,

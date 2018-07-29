@@ -4,7 +4,7 @@ module.exports = (app, Controller) => {
       return app.$services.settings.find({ id: 1 })
     }
 
-    async getGlobalData () {
+    async getGlobalData (ctx) {
       const { BASE_URL, CDN, PAGE_SIZE } = app.$consts
       const time = require('less.js/src/utils/time')
       const cut = require('less.js/src/utils/cut')
@@ -12,7 +12,7 @@ module.exports = (app, Controller) => {
       return {
         helpers: app.$helpers,
         utils: { time, cut },
-        consts: { BASE_URL, CDN, PAGE_SIZE },
+        consts: { BASE_URL, CDN: CDN + (ctx.isPhone ? '/m' : ''), PAGE_SIZE },
         settings: await this.getSettings()
       }
     }
