@@ -10,7 +10,7 @@ module.exports = app => {
       if (id) {
         const details = await app.$services.articles.find({ id })
 
-        await ctx.render('news-details', {
+        await ctx.render((ctx.isPhone ? 'mobile/' : '') + 'news-details', {
           $: {
             ...globalData,
             head: { title, keywords, description },
@@ -37,7 +37,7 @@ module.exports = app => {
         const page = +ctx.query.p || 1
         const where = categoryId ? { category_id: categoryId } : null
 
-        await ctx.render('news', {
+        await ctx.render((ctx.isPhone ? 'mobile/' : '') + 'news', {
           $: {
             ...globalData,
             head: { title, keywords, description },

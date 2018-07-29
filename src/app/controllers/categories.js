@@ -15,7 +15,7 @@ module.exports = app => {
         }
       }
 
-      await ctx.render('categories', data)
+      await ctx.render((ctx.isPhone ? 'mobile/' : '') + 'categories', data)
     }
   }
 }
