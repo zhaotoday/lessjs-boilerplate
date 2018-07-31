@@ -1,3 +1,3 @@
 module.exports = (app, router) => {
-  router.get('/news/:id?', app.$controllers.news.index)
+  router.get('/contact/:id?', app.$controllers.articles.contact)
 }

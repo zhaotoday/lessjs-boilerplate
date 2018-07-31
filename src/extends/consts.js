@@ -42,6 +42,7 @@ const JWT = {
     /^\/m/,
     /^\/static/,
     /^\/news/,
+    /^\/contact/,
     /^\/categories/,
     /\/views/,
     /\/login/,
