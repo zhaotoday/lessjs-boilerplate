@@ -12,7 +12,7 @@ module.exports = (app, Controller) => {
       return {
         helpers: app.$helpers,
         utils: { time, cut },
-        consts: { BASE_URL, CDN: CDN + (ctx.isMobile ? '/m' : ''), PAGE_SIZE, STATIC_VERSION },
+        consts: { BASE_URL, CDN, PAGE_SIZE, STATIC_VERSION },
         settings: await this.getSettings()
       }
     }

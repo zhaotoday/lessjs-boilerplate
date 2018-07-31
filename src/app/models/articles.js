@@ -42,6 +42,10 @@ module.exports = app => {
       type: INTEGER(10).UNSIGNED,
       comment: '次序'
     },
+    alias: {
+      type: STRING(50),
+      comment: '别名'
+    },
     is_home_ad: {
       type: INTEGER(1).UNSIGNED,
       defaultValue: 0,

@@ -29,6 +29,10 @@ module.exports = app => {
     module: {
       type: STRING(50),
       comment: '模块'
+    },
+    alias: {
+      type: STRING(50),
+      comment: '别名'
     }
   })
 }

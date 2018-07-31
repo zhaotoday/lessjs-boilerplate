@@ -36,7 +36,7 @@ const REDIS = {}
 // JWT 配置
 const JWT = {
   secret: 'jwt_secret',
-  expiresIn: '5h',
+  expiresIn: '10d',
   unlessPath: [
     /^\/$/,
     /^\/m/,
