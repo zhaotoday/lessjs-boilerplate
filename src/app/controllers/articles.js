@@ -1,19 +1,24 @@
 module.exports = app => {
   return class extends app.$Controller {
-    async _page (ctx, alias) {
+    async index (ctx) {
       const { title, keywords, description } = await this.getSettings()
       const globalData = await this.getGlobalData(ctx)
-      // TODO: limit = -1 表示无需分页
-      const categories = await app.$services.categories.find({ offset: 0, limit: 1000 })
       const id = ctx.params.id || ''
 
       if (id) {
         const details = await app.$services.articles.find({ id })
+        const alias = details.alias
+        const categories = await app.$services.categories.find({
+          where: { alias: details.alias },
+          offset: 0,
+          limit: 1000
+        })
 
-        await ctx.render((ctx.isMobile ? 'mobile/' : '') + 'articles-details', {
+        await ctx.render((ctx.isMobile ? 'mobile/' : '') + 'article-details', {
           $: {
             ...globalData,
             head: { title, keywords, description },
+            route: `articles/${alias}`,
             alias,
             categories,
             details,
@@ -34,16 +39,24 @@ module.exports = app => {
         })
       } else {
         const { PAGE_SIZE } = app.$consts
+        const alias = ctx.query.a || ''
         const categoryId = ctx.query.c || 0
         const page = +ctx.query.p || 1
         const where = categoryId
           ? { alias, category_id: categoryId }
           : { alias }
+        // TODO: limit = -1 表示无需分页
+        const categories = await app.$services.categories.find({
+          where: { alias },
+          offset: 0,
+          limit: 1000
+        })
 
         await ctx.render((ctx.isMobile ? 'mobile/' : '') + 'articles', {
           $: {
             ...globalData,
             head: { title, keywords, description },
+            route: `articles/${alias}`,
             alias,
             categories,
             category: categoryId ? await app.$services.categories.find({ id: categoryId }) : null,
@@ -53,16 +66,6 @@ module.exports = app => {
           }
         })
       }
-    }
-
-    async news (ctx) {
-      const alias = 'news'
-      await this._page(ctx, alias)
-    }
-
-    async contact (ctx) {
-      const alias = 'contact'
-      await this._page(ctx, alias)
     }
   }
 }

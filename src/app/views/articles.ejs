@@ -1,5 +1,5 @@
 <%
-const view = 'news-details'
+const view = 'articles'
 %>
 <%- include ./commons/snippets/head.ejs %>
 <%- include ./commons/snippets/header.ejs %>
@@ -11,7 +11,8 @@ const view = 'news-details'
     <%- include ./commons/components/side-bar.ejs %>
   </div>
   <div class="c-main__body">
-    <%- include ./commons/components/news-details.ejs %>
+    <%- include ./commons/components/articles.ejs %>
+    <%- include ./commons/components/pagination.ejs %>
   </div>
 </div>
 <%- include ./commons/snippets/footer.ejs %>

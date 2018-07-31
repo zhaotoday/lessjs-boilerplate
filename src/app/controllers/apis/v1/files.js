@@ -42,7 +42,7 @@ module.exports = app => {
     async get (ctx) {
       const item = await service.find({ id: ctx.params.id })
 
-      ctx.response.redirect(`${app.$consts.CDN}/files/${item.dir}/${item.uuid}.${item.ext}`)
+      ctx.response.redirect(`${app.$consts.BASE_URL}/files/${item.dir}/${item.uuid}.${item.ext}`)
     }
   }
 }
