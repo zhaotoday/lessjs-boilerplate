@@ -10,7 +10,8 @@ const BASE_URL = IS_DEV ? `http://localhost:${PORT}` : 'https://www.rjwb.cn'
 // 前端资源 CDN。开发环境下配置成网站构建工具 dev 时的地址
 const CDN = IS_DEV ? `http://localhost:8083` : 'https://www.rjwb.cn'
 
-const STATIC_VERSION = '0.1'
+// 静态资源版本号
+const STATIC_VERSION = '0.4'
 
 // 分页大小
 const PAGE_SIZE = 5
@@ -40,12 +41,10 @@ const JWT = {
   unlessPath: [
     /^\/$/,
     /^\/m/,
-    /^\/static/,
+    /^\/static\//,
     /^\/articles/,
     /^\/categories/,
-    /\/views/,
-    /\/login/,
-    /\/files\/\d/
+    /^\/apis\/v1\/login/
   ]
 }
 
